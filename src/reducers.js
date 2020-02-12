@@ -1,23 +1,25 @@
-import { NEXT, LAST, RESET } from "./actions";
+import { NEXT, LAST, RESET, ADD_BUTTON } from "./actions";
 
 
 const defaultState = {
     characters: ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'],
-    position: 12
+    positions: [12]
 };
 
 function letterCount(state=defaultState, action) {
     const newState = {...state};
-
     switch (action.type) {
         case NEXT:
-            newState.position >= 25 ? newState.position = 0 : ++newState.position;
+            newState.positions[action.id] > 24 ? newState.positions[action.id] = 0 : ++newState.positions[action.id];
             break;
         case LAST:
-            newState.position <= 0 ? newState.position = 25 : --newState.position;
+            newState.positions[action.id] < 1 ? newState.positions[action.id] = 25 : --newState.positions[action.id];
             break;
         case RESET:
-            newState.position = 12;
+            newState.positions[action.id] = 12;
+            break;
+        case ADD_BUTTON:
+            newState.positions.push(12);
             break;
         default:
             break;

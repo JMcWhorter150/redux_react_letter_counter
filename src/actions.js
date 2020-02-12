@@ -3,23 +3,32 @@
 export const NEXT = 'NEXT';
 export const LAST = 'LAST';
 export const RESET = 'RESET';
+export const ADD_BUTTON = 'ADD_BUTTON';
 
 // action constructors
-export function actionNext() {
+export function actionNext(id) {
     return {
-        type: NEXT
+        type: NEXT,
+        id
     }
 }
 
-export function actionLast() {
+export function actionLast(id) {
     return {
-        type: LAST
+        type: LAST,
+        id
     }
 }
 
-export function actionReset() {
+export function actionReset(id) {
     return {
-        type: RESET
+        type: RESET,
+        id
     }
 }
 
+export function actionAddButton() {
+    return {
+        type: ADD_BUTTON
+    }
+}
