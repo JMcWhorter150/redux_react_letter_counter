@@ -11,6 +11,7 @@ export default function LetterCounterApp() {
     return (
         <Provider store={store}>
             <LetterCounters />
+            <br></br>
             <AddButton />
         </Provider>
     );
