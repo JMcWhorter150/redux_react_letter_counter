@@ -1,6 +1,6 @@
 import {connect} from 'react-redux';
 import LetterCounters from '../components/LetterCounters';
-import { actionNext, actionLast, actionReset } from '../actions';
+import { actionNext, actionLast, actionReset, actionDeleteButton } from '../actions';
 
 
 function mapStateToProps(state) {
@@ -13,7 +13,8 @@ function mapDispatchToProps(dispatch) {
     return {
         handleNext: (id) => {dispatch(actionNext(id))},
         handleLast: (id) => {dispatch(actionLast(id))},
-        handleReset: (id) => {dispatch(actionReset(id))}
+        handleReset: (id) => {dispatch(actionReset(id))},
+        handleDeleteButton: (id) => {dispatch(actionDeleteButton(id))}
     }
 }
 // I want the click handler to be able to accept an id

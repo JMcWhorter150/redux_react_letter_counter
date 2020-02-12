@@ -1,4 +1,4 @@
-import { NEXT, LAST, RESET, ADD_BUTTON } from "./actions";
+import { NEXT, LAST, RESET, ADD_BUTTON, DELETE_BUTTON } from "./actions";
 
 
 const defaultState = {
@@ -21,6 +21,8 @@ function letterCount(state=defaultState, action) {
         case ADD_BUTTON:
             newState.positions.push(12);
             break;
+        case DELETE_BUTTON:
+            newState.positions.splice(action.id, 1);
         default:
             break;
     }
