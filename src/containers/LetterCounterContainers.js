@@ -5,7 +5,21 @@ import { actionNext, actionLast, actionReset, actionDeleteButton } from '../acti
 
 function mapStateToProps(state) {
     return {
-        letters: state.positions.map((position) => state.characters[position])
+        letters: state.positions.map((position) => {
+            if (position === 0) {
+                return "4";
+            } else if (position === 4) {
+                return "3";
+            } else if (position === 8) {
+                return "1";
+            } else if (position === 14) {
+                return "0";
+            } else if (position === 20) {
+                return state.upperCharacters[position];
+            } else {
+                return state.characters[position];
+            }
+        })
     }
 }
 
