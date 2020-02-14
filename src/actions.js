@@ -5,6 +5,7 @@ export const LAST = 'LAST';
 export const RESET = 'RESET';
 export const ADD_BUTTON = 'ADD_BUTTON';
 export const DELETE_BUTTON = 'DELETE_BUTTON';
+export const TOGGLE = "TOGGLE";
 
 // action constructors
 export function actionNext(id) {
@@ -38,5 +39,12 @@ export function actionDeleteButton(id) {
     return {
         type: DELETE_BUTTON,
         id
+    }
+}
+
+export function actionToggle(payload) {
+    return {
+        type: TOGGLE,
+        payload
     }
 }
